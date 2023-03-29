@@ -1,0 +1,199 @@
+.munheco__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+
+.munheco {
+  background-color: #ffffff15;
+  display: flex;
+  height: 20rem;
+  justify-content: center;
+  width: 21.875rem;
+  position: relative;
+}
+
+.cabeza {
+  border-radius: 50%;
+  border: 5px solid #000;
+  position: absolute;
+  height: 4.375rem;
+  width: 4.375rem;
+  box-shadow: 3px 4px 10px #f00, inset 3px 3px 10px #f00;
+  top: 4.063rem;
+}
+
+.cuerpo {
+  height: 5.625rem;
+  position: absolute;
+  top: 130px;
+  width: 6px;
+  background-color: #000;
+  box-shadow: 1px 3px 10px #f00;
+  border-radius: 30px;
+}
+
+.brazo_iz {
+  height: 40px;
+  width: 6px;
+  position: absolute;
+  background-color: #000;
+  top: 140px;
+  right: 180px;
+  rotate: 25deg;
+  box-shadow: 3px 3px 10px #f00;
+  border-radius: 30px;
+}
+
+.brazo_de {
+  height: 40px;
+  width: 6px;
+  position: absolute;
+  background-color: #000;
+  rotate: -25deg;
+  top: 140px;
+  right: 165px;
+  box-shadow: 3px 3px 10px #f00;
+  border-radius: 30px;
+  z-index: -1;
+}
+
+.pierna_iz {
+  height: 45px;
+  position: absolute;
+  border-radius: 30px;
+  box-shadow: 3px 3px 10px #f00;
+  top: 210px;
+  right: 180px;
+  rotate: 25deg;
+  width: 6px;
+  background-color: #000;
+}
+
+.pierna_de {
+  height: 45px;
+  position: absolute;
+  box-shadow: 3px 3px 10px #f00;
+  border-radius: 30px;
+  top: 210px;
+  right: 165px;
+  rotate: -25deg;
+  width: 6px;
+  background-color: #000;
+  z-index: -1;
+}
+
+.palo1 {
+  width: 12px;
+  height: 300px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  background-color: #916648;
+  border: thin solid #000;
+}
+
+.palo2 {
+  width: 230px;
+  height: 12px;
+  position: absolute;
+  left: 0;
+  background-color: #916648;
+  border: thin solid #000;
+}
+
+.palo2::before {
+  content: "x";
+  position: absolute;
+  top: 90px;
+  left: 2px;
+  z-index: 10;
+}
+
+.palo2::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 12px;
+  top: 50px;
+  left: -28px;
+  rotate: -60deg;
+  background-color: #916648;
+  border: thin solid #000;
+  z-index: 5;
+  text-align: center;
+}
+
+.palo1::before {
+  content: "x";
+  position: absolute;
+  top: -12px;
+  left: 55px;
+  z-index: 10;
+}
+
+.palo1::after {
+  content: "x";
+  position: absolute;
+  top: -15px;
+  z-index: 10;
+}
+
+.munheco::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 50%;
+  background-color: #268e00;
+  clip-path: polygon(
+    0% 80%,
+    13% 81%,
+    19% 77%,
+    27% 81%,
+    44% 82%,
+    59% 77%,
+    66% 82%,
+    87% 79%,
+    99% 84%,
+    99% 99%,
+    0% 99%
+  );
+}
+
+.cuerda,
+.cuerda-2 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: brown;
+  border: thin solid #000;
+  position: absolute;
+}
+
+.cuerda::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  background-color: brown;
+  border: thin solid #000;
+}
+
+.cuerda::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 33px;
+  background-color: brown;
+  border: thin solid #000;
+}
+
+.cuerda-2 {
+  top: 53px;
+}

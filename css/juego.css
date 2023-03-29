@@ -4,14 +4,17 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Monotype", cursive;
+  font-family: cursive;
   font-size: 16px;
 }
 
 body {
   background-image: url("../img/illustration-space-Earth-cartoon-atmosphere-Adventure-Time-107032-wallhere.com.webp");
   background-size: cover;
-  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-weight: bolder;
+  font-style: oblique;
   background-color: #fff2;
 }
 
@@ -32,11 +35,11 @@ body {
   color: #f00;
   font-size: 1.5rem;
   margin-left: 0.2rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   text-align: center;
   text-transform: uppercase;
-  width: 2.2rem;
-  height: 2.1rem;
+  width: 2.5rem;
+  height: 2.4rem;
   border-bottom: thin solid #800080;
 }
 
@@ -45,29 +48,27 @@ body {
 }
 
 .box__information {
-  margin-top: 3.125rem;
+  margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
-.information {
+.information,
+.pistas {
   display: flex;
   justify-content: center;
   border-bottom: 2px solid #c52fc5;
   width: 200px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1rem;
   background-color: #fff2;
+  color: #fff;
 }
 
 .vidas {
   margin-right: 2rem;
   align-self: center;
-  color: #fff;
-}
-
-.racha {
-  color: #fff;
 }
 
 .letras_pulsadas {
@@ -89,203 +90,47 @@ body {
   color: #040539;
 }
 
-/* Muñeco */
-.munheco__container {
+.pistas__letras {
+  margin-right: 1rem;
+}
+
+.btns__container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: end;
+  justify-content: space-around;
 }
 
-.munheco {
-  background-color: #ffffff15;
-  display: flex;
-  height: 20rem;
-  justify-content: center;
-  width: 21.875rem;
-  position: relative;
+.mobil__text {
+  outline: none;
+  border: none;
+  background-color: #fff2;
+  color: #000;
+  height: 30px;
+  width: 200px;
+  margin-bottom: 1rem;
+  margin-top: 0.3rem;
 }
 
-.cabeza {
-  border-radius: 50%;
-  border: 5px solid #000;
-  position: absolute;
-  height: 4.375rem;
-  width: 4.375rem;
-  box-shadow: 3px 4px 10px #f00, inset 3px 3px 10px #f00;
-  top: 4.063rem;
-}
-
-.cuerpo {
-  height: 5.625rem;
-  position: absolute;
-  top: 130px;
-  width: 6px;
-  background-color: #000;
-  box-shadow: 1px 3px 10px #f00;
-  border-radius: 30px;
-}
-
-.brazo_iz {
-  height: 40px;
-  width: 6px;
-  position: absolute;
-  background-color: #000;
-  top: 140px;
-  right: 180px;
-  rotate: 25deg;
-  box-shadow: 3px 3px 10px #f00;
-  border-radius: 30px;
-}
-
-.brazo_de {
-  height: 40px;
-  width: 6px;
-  position: absolute;
-  background-color: #000;
-  rotate: -25deg;
-  top: 140px;
-  right: 165px;
-  box-shadow: 3px 3px 10px #f00;
-  border-radius: 30px;
-  z-index: -1;
-}
-
-.pierna_iz {
-  height: 45px;
-  position: absolute;
-  border-radius: 30px;
-  box-shadow: 3px 3px 10px #f00;
-  top: 210px;
-  right: 180px;
-  rotate: 25deg;
-  width: 6px;
-  background-color: #000;
-}
-
-.pierna_de {
-  height: 45px;
-  position: absolute;
-  box-shadow: 3px 3px 10px #f00;
-  border-radius: 30px;
-  top: 210px;
-  right: 165px;
-  rotate: -25deg;
-  width: 6px;
-  background-color: #000;
-  z-index: -1;
-}
-
-.palo1 {
-  width: 12px;
-  height: 300px;
-  position: absolute;
-  top: 5px;
-  left: 0;
-  background-color: #916648;
-  border: thin solid #000;
-}
-
-.palo2 {
-  width: 230px;
-  height: 12px;
-  position: absolute;
-  left: 0;
-  background-color: #916648;
-  border: thin solid #000;
-}
-
-.palo2::before {
-  content: "x";
-  position: absolute;
-  top: 90px;
-  left: 2px;
-  z-index: 10;
-}
-
-.palo2::after {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 12px;
-  top: 50px;
-  left: -28px;
-  rotate: -60deg;
-  background-color: #916648;
-  border: thin solid #000;
-  z-index: 5;
+.mobil__text::placeholder {
   text-align: center;
 }
 
-.palo1::before {
-  content: "x";
-  position: absolute;
-  top: -12px;
-  left: 55px;
-  z-index: 10;
+.mobil__text:focus {
+  outline: 1px solid red;
 }
 
-.palo1::after {
-  content: "x";
-  position: absolute;
-  top: -15px;
-  z-index: 10;
+.btn {
+  width: 70px;
+  height: 30px;
+  background-color: #040539;
+  color: #fff;
+  border: none;
+}
+.container__menu {
+  display: flex;
+  justify-content: center;
 }
 
-.munheco::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 50%;
-  top: 50%;
-  background-color: #268e00;
-  clip-path: polygon(
-    0% 80%,
-    13% 81%,
-    19% 77%,
-    27% 81%,
-    44% 82%,
-    59% 77%,
-    66% 82%,
-    87% 79%,
-    99% 84%,
-    99% 99%,
-    0% 99%
-  );
-}
-
-.cuerda,
-.cuerda-2 {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: brown;
-  border: thin solid #000;
-  position: absolute;
-}
-
-.cuerda::after {
-  content: "";
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: absolute;
-  top: 15px;
-  background-color: brown;
-  border: thin solid #000;
-}
-
-.cuerda::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: absolute;
-  top: 33px;
-  background-color: brown;
-  border: thin solid #000;
-}
-
-.cuerda-2 {
-  top: 53px;
+.material-symbols-outlined {
+  color: #fff;
+  font-size: 60px;
 }

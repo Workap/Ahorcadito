@@ -4,17 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <link rel="stylesheet" href="../css/juego.css" />
-    <!-- <link rel="stylesheet" /> -->
+    <link rel="stylesheet" href="../css/munheco.css" />
     <link rel="shortcut icon" href="../img/verdugo.png" type="image/x-icon" />
     <title>Ahorcadito</title>
   </head>
   <body>
     <main>
-      <div class="letras">
-        <!-- <div class="letras_chart">H</div> -->
-        <!-- <div class="space"></div> -->
-      </div>
+      <header>
+        <div class="pistas">
+          <p class="pistas__letras">Letras: 1</p>
+          <p>Palabras: 1</p>
+        </div>
+      </header>
+      <div class="letras"></div>
       <section class="munheco__container">
         <div class="munheco-container">
           <div class="munheco">
@@ -39,7 +46,7 @@
         </div>
         <div class="letras_pulsadas">
           <div class="letras__pulsadas-style">H</div>
-          <div class="letras__pulsadas-style">o</div>
+          <div class="letras__pulsadas-style">E</div>
           <div class="letras__pulsadas-style">l</div>
           <div class="letras__pulsadas-style">l</div>
           <div class="letras__pulsadas-style">l</div>
@@ -52,7 +59,7 @@
           <div class="letras__pulsadas-style">l</div>
           <div class="letras__pulsadas-style">l</div>
           <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">l</div>
+          <div class="letras__pulsadas-style">c</div>
           <div class="letras__pulsadas-style">l</div>
           <div class="letras__pulsadas-style">l</div>
           <div class="letras__pulsadas-style">l</div>
@@ -60,10 +67,21 @@
         </div>
       </section>
       <section class="btns__container">
-        <button class="btn__back">Volver</button>
-        <button class="btn__restar">Restar</button>
-        <button class="btn__menu">menu</button>
+        <!-- <button class="btn__back">Volver</button> -->
+        <!-- <button class="btn__restar">Restar</button> -->
+        <form class="form">
+          <input
+            type="text"
+            class="mobil__text"
+            placeholder="Letras"
+            autofocus
+          />
+          <input type="submit" value="Enviar" class="btn" />
+        </form>
       </section>
+      <div class="container__menu">
+        <span class="material-symbols-outlined btn__menu"> menu </span>
+      </div>
     </main>
     <script src="../JS/juego.js"></script>
   </body>
