@@ -30,41 +30,21 @@
             <div class="palo3"></div>
             <div class="cuerda"></div>
             <div class="cuerda-2"></div>
-            <div class="cabeza"></div>
-            <div class="cuerpo"></div>
-            <div class="brazo_iz"></div>
-            <div class="brazo_de"></div>
-            <div class="pierna_iz"></div>
-            <div class="pierna_de"></div>
+            <div class="cabeza" id="munheco"></div>
+            <div class="cuerpo" id="munheco"></div>
+            <div class="brazo_iz" id="munheco"></div>
+            <div class="brazo_de" id="munheco"></div>
+            <div class="pierna_iz" id="munheco"></div>
+            <div class="pierna_de" id="munheco"></div>
           </div>
         </div>
       </section>
       <section class="box__information">
         <div class="information">
-          <div class="vidas">Vidas: 1</div>
+          <p class="vidas"></p>
           <div class="racha">Racha: 1</div>
         </div>
-        <div class="letras_pulsadas">
-          <div class="letras__pulsadas-style">H</div>
-          <div class="letras__pulsadas-style">E</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">c</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">l</div>
-          <div class="letras__pulsadas-style">a</div>
-        </div>
+        <div class="letras_pulsadas"></div>
       </section>
       <section class="btns__container">
         <!-- <button class="btn__back">Volver</button> -->
@@ -75,6 +55,8 @@
             class="mobil__text"
             placeholder="Letras"
             autofocus
+            pattern="[a-zA-ZÑñ]"
+            title="Solo se admiten letras de una en una"
           />
           <input type="submit" value="Enviar" class="btn" />
         </form>
