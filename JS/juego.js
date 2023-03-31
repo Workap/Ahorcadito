@@ -283,11 +283,14 @@ const contPalabras = document.querySelector(".pistas__palabras");
 
 formText.value = "";
 vida.innerText = `Vidas: ${vidas}`;
+
 let i = 0;
 let cont = 0;
 let vic = 0;
 let contSpace = 1;
 let perder = 0;
+let letrasUse = [];
+
 contLetras.innerText = `Letras: ${palabra.length}`;
 
 form.addEventListener("submit", (e) => {
@@ -296,7 +299,13 @@ form.addEventListener("submit", (e) => {
   const div = document.createElement("div");
 
   if (inputLetra === " " || inputLetra === "") {
-    alert("Tienes que escribir una letra o palabra");
+    alert("Tienes que escribir una letra no se puede usar vacio");
+    return;
+  }
+
+  if (letrasUse.join("").includes(inputLetra)) {
+    alert("No se puede repetir las letrasque ya se usaron");
+    formText.value = "";
     return;
   }
 
@@ -304,6 +313,8 @@ form.addEventListener("submit", (e) => {
     alert(`Has perdido la palabra era: ${palabra}`);
     return;
   }
+
+  letrasUse.push(inputLetra);
 
   if (palabra.includes(inputLetra)) {
     for (let i = 0; i < letras.childNodes.length; i++) {
