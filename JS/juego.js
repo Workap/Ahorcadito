@@ -268,45 +268,41 @@ const palabras = [
   "amor",
   "trabajo",
 ];
-
-let random = Math.round(Math.random() * palabras.length);
-
-let palabra = palabras[random];
-
+// let pallabras = ["css", "javascrip"];
+let palabra = palabras[Math.round(Math.random() * palabras.length)];
 let vidas = 6;
 
 const form = document.querySelector(".form");
 const formText = document.querySelector(".mobil__text");
 const letras = document.querySelector(".letras");
 const letrasUsadas = document.querySelector(".letras_pulsadas");
-const munheco = document.querySelectorAll("#munheco");
+const munheco = document.querySelectorAll(".perder");
 const vida = document.querySelector(".vidas");
+const contLetras = document.querySelector(".pistas__letras");
+const contPalabras = document.querySelector(".pistas__palabras");
 
-// console.log(munheco);
 formText.value = "";
 vida.innerText = `Vidas: ${vidas}`;
 let i = 0;
 let cont = 0;
 let vic = 0;
+let contSpace = 1;
+let perder = 0;
+contLetras.innerText = `Letras: ${palabra.length}`;
 
-console.log(letras.childNodes);
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(cont);
   let inputLetra = formText.value.toLowerCase();
   const div = document.createElement("div");
+
   if (inputLetra === " " || inputLetra === "") {
     alert("Tienes que escribir una letra o palabra");
     return;
   }
 
   if (vidas === 0) {
-    alert(`Has perdido la palabra era ${palabra}`);
+    alert(`Has perdido la palabra era: ${palabra}`);
     return;
-  }
-
-  if (vic === cont) {
-    alert("has ganado");
   }
 
   if (palabra.includes(inputLetra)) {
@@ -318,11 +314,17 @@ form.addEventListener("submit", (e) => {
     }
   } else {
     vida.innerText = `Vidas: ${(vidas = vidas - 1)}`;
+    munheco[perder].classList.remove("hidden");
+    perder++;
   }
   letrasUsadas.appendChild(div).classList = "letras__pulsadas-style";
   letrasUsadas.childNodes[i].innerText = inputLetra;
   i++;
   formText.value = "";
+  if (vic === cont) {
+    alert("has ganado");
+    return;
+  }
 });
 
 if (palabra === undefined) {
@@ -333,15 +335,14 @@ for (let i = 0; i < palabra.length; i++) {
   const div = document.createElement("div");
   if (palabra[i] == " ") {
     letras.appendChild(div).className = "space";
+    contSpace++;
   } else {
     letras.appendChild(div).className = "letras_chart";
     cont++;
   }
-
-  if (letras.childNodes === 0) {
-    alert("No se ha cargado ningina palabra");
-  }
 }
+
+contPalabras.innerText = `Palabras: ${contSpace}`;
 
 const btnMenu = document.querySelector(".btn__menu");
 
