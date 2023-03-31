@@ -8,7 +8,7 @@
 .munheco {
   background-color: #ffffff15;
   display: flex;
-  height: 20rem;
+  height: 18rem;
   justify-content: center;
   width: 21.875rem;
   position: relative;
@@ -87,7 +87,7 @@
 
 .palo1 {
   width: 12px;
-  height: 300px;
+  height: 260px;
   position: absolute;
   top: 5px;
   left: 0;

@@ -280,6 +280,8 @@ const munheco = document.querySelectorAll(".perder");
 const vida = document.querySelector(".vidas");
 const contLetras = document.querySelector(".pistas__letras");
 const contPalabras = document.querySelector(".pistas__palabras");
+const message = document.querySelector(".modal__msg");
+const btnMenu = document.querySelector(".btn__menu");
 
 formText.value = "";
 vida.innerText = `Vidas: ${vidas}`;
@@ -299,18 +301,13 @@ form.addEventListener("submit", (e) => {
   const div = document.createElement("div");
 
   if (inputLetra === " " || inputLetra === "") {
-    alert("Tienes que escribir una letra no se puede usar vacio");
+    // alert("Tienes que escribir una letra no se puede enviar espacios vacios");
     return;
   }
 
   if (letrasUse.join("").includes(inputLetra)) {
-    alert("No se puede repetir las letrasque ya se usaron");
+    alert("No se puede repetir las letras que ya se usaron");
     formText.value = "";
-    return;
-  }
-
-  if (vidas === 0) {
-    alert(`Has perdido la palabra era: ${palabra}`);
     return;
   }
 
@@ -333,7 +330,17 @@ form.addEventListener("submit", (e) => {
   i++;
   formText.value = "";
   if (vic === cont) {
-    alert("has ganado");
+    message.innerText = `Has ganado`;
+    formText.setAttribute("disabled", "");
+    location.replace("#openModal");
+    return;
+  }
+
+  if (vidas === 0) {
+    message.innerText = `Has perdido la palabra era: ${palabra}`;
+    formText.setAttribute("disabled", "");
+    formText.value = "";
+    location.replace("#openModal");
     return;
   }
 });
@@ -341,6 +348,10 @@ form.addEventListener("submit", (e) => {
 if (palabra === undefined) {
   palabra = "error";
 }
+
+document.addEventListener("click", () => {
+  formText.focus();
+});
 
 for (let i = 0; i < palabra.length; i++) {
   const div = document.createElement("div");
@@ -353,10 +364,6 @@ for (let i = 0; i < palabra.length; i++) {
   }
 }
 
-contPalabras.innerText = `Palabras: ${contSpace}`;
-
-const btnMenu = document.querySelector(".btn__menu");
-
 btnMenu.addEventListener("click", () => {
-  alert("Se a clickeado el menu");
+  message.innerText = `Menu`;
 });

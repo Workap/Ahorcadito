@@ -10,6 +10,7 @@
     />
     <link rel="stylesheet" href="../css/juego.css" />
     <link rel="stylesheet" href="../css/munheco.css" />
+    <link rel="stylesheet" href="../css/modal.css" />
     <link rel="shortcut icon" href="../img/verdugo.png" type="image/x-icon" />
     <title>Ahorcadito</title>
   </head>
@@ -47,8 +48,6 @@
         <div class="letras_pulsadas"></div>
       </section>
       <section class="btns__container">
-        <!-- <button class="btn__back">Volver</button> -->
-        <!-- <button class="btn__restar">Restar</button> -->
         <form class="form">
           <input
             type="text"
@@ -58,11 +57,24 @@
             pattern="[a-zA-ZÑñ]"
             title="Solo se admiten letras de una en una"
           />
-          <input type="submit" value="Enviar" class="btn" />
+          <input type="submit" value="Enviar" class="btn enviar" />
+          <input type="button" value="volver a jugar" class="test" />
         </form>
       </section>
       <div class="container__menu">
-        <span class="material-symbols-outlined btn__menu"> menu </span>
+        <a href="#openModal" class="material-symbols-outlined btn__menu"
+          >menu</a
+        >
+        <div id="openModal" class="modalDialog">
+          <div class="modal">
+            <p class="modal__msg">Menu</p>
+            <a href="#" title="Close" class="close">X</a>
+            <div class="modal__container-a">
+              <a href="juego.html" class="jugar btn">Jugar de Nuevo</a>
+              <a href="../index.html" class="home btn">Home</a>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <script src="../JS/juego.js"></script>

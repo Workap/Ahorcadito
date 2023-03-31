@@ -60,7 +60,6 @@ body {
   width: 250px;
   margin-left: auto;
   margin-right: auto;
-  /* margin-top: 1rem; */
   background-color: #fff2;
   color: #fff;
 }
@@ -129,6 +128,10 @@ body {
   color: #fff;
   border: none;
 }
+
+a.btn:hover {
+  border-bottom: medium solid #393804;
+}
 .container__menu {
   display: flex;
   justify-content: center;
@@ -142,4 +145,16 @@ body {
 
 .hidden {
   opacity: 0;
+}
+
+.mobil__text:disabled + .enviar {
+  display: none;
+}
+
+.test {
+  display: none;
+}
+
+.mobil__text:disabled + .test {
+  display: inline;
 }
