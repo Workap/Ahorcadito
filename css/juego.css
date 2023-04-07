@@ -9,7 +9,7 @@
 }
 
 body {
-  background-image: url("../img/illustration-space-Earth-cartoon-atmosphere-Adventure-Time-107032-wallhere.com.webp");
+  background-image: url("../img/bg-juego.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -111,10 +111,12 @@ body {
   font-weight: bold;
   font-size: 1.2rem;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .mobil__text::placeholder {
   text-align: center;
+  text-transform: none;
 }
 
 .mobil__text:focus {
