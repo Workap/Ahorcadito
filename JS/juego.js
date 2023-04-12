@@ -268,9 +268,19 @@ const palabras = [
   "amor",
   "trabajo",
 ];
-// let pallabras = ["css", "javascrip"];
+// let palabras = ["css", "javascrip"];
 let palabra = palabras[Math.round(Math.random() * palabras.length)];
 let vidas = 6;
+
+// console.log(localStorage.getItem("Palabra").length !== 0);
+
+if (localStorage.getItem("Palabra") === null) {
+  palabra = palabras[Math.round(Math.random() * palabras.length)];
+} else if (localStorage.getItem("Palabra").length !== 0) {
+  palabra = localStorage.getItem("Palabra");
+  console.log("Entro");
+  localStorage.removeItem("Palabra");
+}
 
 const form = document.querySelector(".form");
 const formText = document.querySelector(".mobil__text");
@@ -358,6 +368,7 @@ for (let i = 0; i < palabra.length; i++) {
   if (palabra[i] == " ") {
     letras.appendChild(div).className = "space";
     contSpace++;
+    contPalabras.innerText = `Palabras:${contSpace}`;
   } else {
     letras.appendChild(div).className = "letras_chart";
     cont++;

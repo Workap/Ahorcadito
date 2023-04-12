@@ -4,16 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/modal.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="shortcut icon" href="img/verdugo.png" type="image/x-icon" />
-    <title>Ahorcadito by Workap</title>
+    <title>Ahorcadito</title>
   </head>
   <body>
-    <div class="container">
+    <main class="container">
       <div class="btn__container">
-        <a href="pages/juego.html" class="btn__jugar btn">Jugar</a>
-        <a href="#" class="btn__add btn">Agregar palabra</a>
+        <a href="pages/juego.html" class="btn__jugar btn__index">Jugar</a>
+        <a href="#openModal" class="btn__add btn__index">Agregar palabra</a>
       </div>
-    </div>
+      <div id="openModal" class="modalDialog">
+        <div class="modal">
+          <a href="#" title="Close" class="close">X</a>
+          <form class="modal__container-a">
+            <input
+              type="text"
+              class="form__add"
+              placeholder="Palabra"
+              maxlength="15"
+              minlength="2"
+              pattern="[a-zA-ZÑñ]"
+              title="Tienes que poner por lo menos una letra, no se admiten caractres especiales"
+              required
+            />
+            <button type="submit" class="btn__index btn__add-jugar">
+              Jugar
+            </button>
+            <a href="#" class="back"
+              ><img src="./img/back.png" alt="Icono para volver"
+            /></a>
+          </form>
+          <p class="msg">
+            Puedes agregar una palabra o una frase menor a 15 letras
+          </p>
+        </div>
+      </div>
+    </main>
+    <script src="JS/index.js" type="module"></script>
   </body>
 </html>
